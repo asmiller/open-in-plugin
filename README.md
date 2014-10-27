@@ -1,16 +1,3 @@
-# Open In PhoneGap plugin
+# net.atlaslearning.cordova.open-in
 
-## How To Use
-
-        document.addEventListener("deviceready", onDeviceReady, false);
-
-        function onDeviceReady() {        
-            window.HelloWorld.say( 
-                function(result) {
-                    alert("result = " + result);
-                },
-                function() {
-                    alert("error");
-                }
-            );
-        }
+Cloned from battery-status plugin

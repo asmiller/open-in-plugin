@@ -27,7 +27,7 @@ var cordova = require('cordova'),
     exec = require('cordova/exec');
 
 var OpenIn = function () {
-    exec(openIn._status, openIn._error, "OpenIn", "start", []);
+    exec(this._status, this._error, "OpenIn", "start", []);
 };
 
 /**

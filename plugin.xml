@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="net.atlaslearning.openin"
+        version="0.0.1">
+
+    <name>OpenInPlugin</name>
+    <description>Open files in this application</description>
+    <author>Andrew Miller</author>
+    <license>Apache 2.0 License</license>
+    <engines>
+        <engine name="cordova" version=">=2.9.0"/>
+    </engines>
+    <js-module src="www/open_in.js" name="openin">
+        <clobbers target="OpenIn"/>
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="OpenInPlugin">
+                <param name="ios-package" value="OpenInPlugin"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/OpenInPlugin.h" target-dir="src/ios"/>
+        <source-file src="src/ios/OpenInPlugin.m" target-dir="src/ios"/>
+    </platform>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="OpenInPlugin">
+                <param name="android-package" value="net.atlaslearning.OpenInPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/net/atlaselarning/OpenInPlugin.java" target-dir="src/net/atlaslearning"/>
+    </platform>
+
+</plugin>

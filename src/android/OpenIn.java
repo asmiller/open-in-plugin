@@ -16,7 +16,7 @@
        specific language governing permissions and limitations
        under the License.
 */
-package org.apache.cordova.batterystatus;
+package net.atlaslearning.cordova.OpenIn;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -31,7 +31,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
 
-public class BatteryListener extends CordovaPlugin {
+public class OpenIn extends CordovaPlugin {
 
     private static final String LOG_TAG = "BatteryManager";
 

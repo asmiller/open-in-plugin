@@ -50,6 +50,8 @@
             </feature>
         </config-file>
         <header-file src="src/ios/OpenIn.h"/>
+        <header-file src="src/ios/AppDelegate+openin.h"/>
+        <source-file src="src/ios/AppDelegate+openin.m"/>
         <source-file src="src/ios/OpenIn.m"/>
     </platform>
 

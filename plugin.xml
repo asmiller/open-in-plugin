@@ -31,20 +31,7 @@
         <clobbers target="openin"/>
     </js-module>
 
-    <config-file platform="android" parent="/manifest/application">
-        <activity android:name=".HomeroomNewIntent">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="application/*"/>
-                <data android:mimeType="audio/*"/>
-                <data android:mimeType="image/*"/>
-                <data android:mimeType="text/*"/>
-                <data android:mimeType="video/*"/>
-            </intent-filter>
-        </activity>
-    </config-file>
-    <config-file platform="ios" parent="CFBundleDocumentTypes">
+    <config-file target="*-Info.plist" parent="CFBundleDocumentTypes">
         <array>
             <dict>
                 <key>CFBundleTypeRole</key>

@@ -27,10 +27,9 @@ NSString *const OpenInNotificationConst = @"OpenInNotification";
 
 - (void)updateOpenIn:(NSNotification*)notification
 {
-    NSDictionary* batteryData = [self getBatteryStatus];
 
     if (self.callbackId) {
-        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:batteryData];
+        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:notification.];
         [result setKeepCallbackAsBool:YES];
         [self.commandDelegate sendPluginResult:result callbackId:self.callbackId];
     }

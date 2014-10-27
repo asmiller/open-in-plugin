@@ -16,7 +16,7 @@
         [[NSNotificationCenter defaultCenter]
             postNotificationName:OpenInNotificationConst
                     object:[NSDictionary dictionaryWithObjectsAndKeys:
-                                        [url absoluteString], @"url", nil];
+                                        [url absoluteString], @"url",nil]];
     }
     return YES;
 }

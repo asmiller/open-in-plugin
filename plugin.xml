@@ -19,7 +19,7 @@
 -->
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="net.atlaslearning.cordova.openin"
+        id="net.atlaslearning.cordova"
         version="0.1">
     <name>OpenIn</name>
     <description>Open In Plugin</description>

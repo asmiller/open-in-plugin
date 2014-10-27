@@ -13,10 +13,9 @@
 -(BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     if (url != nil && [url isFileURL]) {
-        [[NSNotificationCenter defaultCenter]
-            postNotificationName:OpenInNotificationConst
-                    object:[NSDictionary dictionaryWithObjectsAndKeys:
-                                        [url absoluteString], @"url",nil]];
+        NSFileManager *man = [NSFileManager defaultManager];
+        NSDictionary *attrs = [man attributesOfItemAtPath: [url absoluteString] error: NULL];
+        [[NSNotificationCenter defaultCenter] postNotificationName:OpenInNotificationConst object:attrs];
     }
     return YES;
 }

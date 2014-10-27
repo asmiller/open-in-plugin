@@ -14,8 +14,19 @@
 {
     if (url != nil && [url isFileURL]) {
         NSFileManager *man = [NSFileManager defaultManager];
-        NSDictionary *attrs = [man attributesOfItemAtPath: [url absoluteString] error: NULL];
-        [[NSNotificationCenter defaultCenter] postNotificationName:OpenInNotificationConst object:attrs];
+        NSDictionary *attrs = [man attributesOfItemAtPath: [url path] error: NULL];
+
+        NSArray *parts = [[url absoluteString] componentsSeparatedByString:@"/"];
+        NSString *filename = [parts objectAtIndex:[parts count]-1];
+
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        filename, @"filename",
+                                        [url absoluteString], @"url",
+                                        [attrs valueForKey:@"NSFileSize"], @"size", nil];
+
+        [[NSNotificationCenter defaultCenter]
+            postNotificationName:OpenInNotificationConst
+                    object:dict];
     }
     return YES;
 }

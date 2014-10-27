@@ -15,7 +15,8 @@
     if (url != nil && [url isFileURL]) {
         [[NSNotificationCenter defaultCenter]
             postNotificationName:OpenInNotificationConst
-                    object:url];
+                    object:[NSDictionary dictionaryWithObjectsAndKeys:
+                                        [url absoluteString], @"url", nil];
     }
     return YES;
 }
